@@ -28,7 +28,8 @@ public class AirlineStepDefinition {
 
     @Given("el {actor} establece el endpoint para obtener las aerolineas")
     public void elActorEstableceElEndpointParaObtenerLasAerolineas(Actor actor) {
-        actor.whoCan(CallAnApi.at("https://api.instantwebtools.net/v1"));
+        actor.whoCan(CallAnApi.at("https://api.instantwebtools.net/v1"));// Configura las habilidades del actor, indicando que este puede realizar llamadas a una API.
+       // actor realizará las llamadas a la API base https://api.instantwebtools.net/v1
     }
 
     @When("el {actor} envia una solicitud GET")
@@ -39,6 +40,8 @@ public class AirlineStepDefinition {
     @Then("el codigo de respuesta deberia ser {int}")
     public void elCodigoDeRespuestaDeberiaSer(int responseCode) {
         theActorInTheSpotlight().should(seeThat("El código de respuesta", ResponseCode.getStatus(), equalTo(responseCode)));
+        //    ResponseCode.getStatus() obtiene el código de respuesta.
+        //    equalTo(200) valida que el código sea igual a 200.
     }
 
     @Given("el {actor} establece el endpoint POST para crear una aerolinea")

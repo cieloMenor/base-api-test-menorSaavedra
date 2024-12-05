@@ -14,4 +14,5 @@ public class ResponseCode implements Question<Integer> {
     public Integer answeredBy(Actor actor) {
         return SerenityRest.lastResponse().statusCode();
     }
+    //Permite recuperar el código de respuesta HTTP, como 200, 404, 500, etc., para validarlo en las pruebas.
 }

@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features",
-        glue = "com.nttdata.testing",
-        tags = "@Airlines")
+        features = "src/test/resources/features", //donde estan los features
+        glue = "com.nttdata.testing", //para buscar los stepdefinitions
+        tags = "@PetstoreOrder")//ejecutar escenario
 public class RunnerTest {
 
 }
